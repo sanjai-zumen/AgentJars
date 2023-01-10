@@ -93,9 +93,6 @@ const connectiondetails =  db.user_connection_detail.find({orgId:"buy2324950f126
 
    db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["partnumber"],outputField:"poNo",inputField:"pono"}])
 
-
-
-
  
 })
 
