@@ -49,4 +49,53 @@ const connectiondetails =  db.user_connection_detail.find({orgId:"buy2324950f126
    db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/parts/partrate",httpOperation:"GET",outputField:"currency",inputField:"currencyKey"}])
 
 
+
+   db.endpointsmappingstore.insert({orgId:"buy2324950f126b",connectionId:x,zumenEndPoint:"/pricingdetails",zumenAgentEndpoint:"sap/ecc/v1/material/inforecord",httpOperation:"POST"})
+   sappartsschema = JSON.stringify([{materialNumber:"string",procurementType:"string",partCost:"string",vendor:"string",oneTimePriceFlag:"string",quantity:"string",rfqNumber:"string"}])
+   db.url_meta_data.insert({orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",requestMetaData:sappartsschema})
+
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"materialNumber",inputField:"erpItemCode"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"procurementType",inputField:"makeBuy"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"partCost",inputField:"unitRate"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"vendor",inputField:"erpSupplierCode"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"oneTimePriceFlag",inputField:"oneTimePriceFlag"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"quantity",inputField:"poQuantityLimit"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"rfqNumber",inputField:"rfqNumber"}])
+
+
+   db.endpointsmappingstore.insert({orgId:"buy2324950f126b",connectionId:x,zumenEndPoint:"/purchaseorder",zumenAgentEndpoint:"sap/ecc/v1/purchaseorder",parameters:["purchaseordernumber"],httpOperation:"GET"})
+   sappartsschema = JSON.stringify({poNo:"string",companyCode:"string",documentType:"string",documentDate:"string",supplier:"string",paymentTerms:"string",po_item:[{
+      poItemNumber:"string",partDescription:"string",partNumber:"string",unitRate:"string",quantity:"string",uom:"string",currencyIso:"string",deliveryTimeInDays:"number"
+   }]})
+
+   db.url_meta_data.insert({orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["purchaseordernumber"],responseMetaData:sappartsschema})
+
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["purchaseordernumber"],outputField:"poNo",inputField:"pono"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["purchaseordernumber"],outputField:"companyCode",inputField:"companycode"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["purchaseordernumber"],outputField:"documentType",inputField:"documenttype"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["purchaseordernumber"],outputField:"documentDate",inputField:"documentDate"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["purchaseordernumber"],outputField:"supplier",inputField:"vendor"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["purchaseordernumber"],outputField:"paymentTerms",inputField:"paymentTerms"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["purchaseordernumber"],outputField:"po_item",inputField:"purchaseOrderItem"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["purchaseordernumber"],outputField:"po_item.poItemNumber",inputField:"purchaseOrderItem.poItemNumber"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["purchaseordernumber"],outputField:"po_item.partDescription",inputField:"purchaseOrderItem.partDescription"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["purchaseordernumber"],outputField:"po_item.partNumber",inputField:"purchaseOrderItem.materialNumber"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["purchaseordernumber"],outputField:"po_item.unitRate",inputField:"purchaseOrderItem.unitRate"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["purchaseordernumber"],outputField:"po_item.quantity",inputField:"purchaseOrderItem.quantity"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["purchaseordernumber"],outputField:"po_item.uom",inputField:"purchaseOrderItem.uom"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["purchaseordernumber"],outputField:"po_item.currencyIso",inputField:"purchaseOrderItem.currencyIso"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["purchaseordernumber"],outputField:"po_item.deliveryTimeInDays",inputField:"purchaseOrderItem.deliveryTimeInDays"}])
+
+   db.endpointsmappingstore.insert({orgId:"buy2324950f126b",connectionId:x,zumenEndPoint:"/purchaseorder",zumenAgentEndpoint:"sap/ecc/v1/purchaseorder",parameters:["partnumber"],httpOperation:"GET"})
+   sappartsschema = JSON.stringify([{poNo:"string"}])
+
+   db.url_meta_data.insert({orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["partnumber"],responseMetaData:sappartsschema})
+
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["partnumber"],outputField:"poNo",inputField:"pono"}])
+
+
+
+
+ 
 })
+
