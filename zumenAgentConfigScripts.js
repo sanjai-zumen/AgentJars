@@ -1,4 +1,8 @@
-var db = connect('172.31.58.231:8560/zumenAgentDB')
+//Run using below Command
+// mongo MONGOURL zumenagent.js
+
+var db = connect('localhost/zumenAgentDB')
+db.auth({ user: "USERNAME", pwd: "PASSWORD" })
 
 db.user_connection_detail.drop()
 db.endpointsmappingstore.drop()
