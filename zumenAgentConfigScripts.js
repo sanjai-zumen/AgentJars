@@ -96,12 +96,12 @@ const connectiondetails =  db.user_connection_detail.find({orgId:"buy4adad087f60
    db.mappingstore.insert([{orgId:"buy4adad087f601",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["partnumber"],outputField:"poNo",inputField:"pono"}])
 
    
-   db.endpointsmappingstore.insert({orgId:"buy4adad087f601",connectionId:x,zumenEndPoint:"/purchaseorder",zumenAgentEndpoint:"sap/ecc/v1/purchaseorder",parameters:["partnumber"],httpOperation:"GET"})
+  /* db.endpointsmappingstore.insert({orgId:"buy4adad087f601",connectionId:x,zumenEndPoint:"/purchaseorder",zumenAgentEndpoint:"sap/ecc/v1/purchaseorder",parameters:["creationdate"],httpOperation:"GET"})
    sappartsschema = JSON.stringify([{poNo:"string"}])
 
    db.url_meta_data.insert({orgId:"buy4adad087f601",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["creationdate"],responseMetaData:sappartsschema})
 
-   db.mappingstore.insert([{orgId:"buy4adad087f601",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["creationdate"],outputField:"poNo",inputField:"pono"}])
+   db.mappingstore.insert([{orgId:"buy4adad087f601",connectionId:x,zumenEndpoint:"/purchaseorder",httpOperation:"GET",parameters:["creationdate"],outputField:"poNo",inputField:"pono"}])*/
 
 
    db.endpointsmappingstore.insert({orgId:"buy4adad087f601",connectionId:x,zumenEndPoint:"/supplier",zumenAgentEndpoint:"sap/ecc/v1/vendors",httpOperation:"GET"})
