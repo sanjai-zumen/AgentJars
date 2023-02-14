@@ -1,5 +1,6 @@
-use('zumenAgentDB');
-var db = connect('172.31.58.231:8560/zumenAgentDB')
+//run like this
+//mongo mongodb://zumenadmin:USERNAME:PASSWORD@127.0.0.1:8560 zumenAgentConfigScripts.js
+var db = connect("mongodb://USERNAME:PASSWORD@127.0.0.1:8560/zumenAgentDB?authSource=admin");
 
 db.user_connection_detail.drop()
 db.endpointsmappingstore.drop()
