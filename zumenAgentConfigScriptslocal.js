@@ -1,5 +1,4 @@
-use('zumenAgentDB');
-var db = connect('172.31.58.231:8560/zumenAgentDB')
+var db = connect('localhost/zumenAgentDB')
 
 db.user_connection_detail.drop()
 db.endpointsmappingstore.drop()
@@ -10,6 +9,7 @@ db.mappingstore.drop()
 db.user_connection_detail.insert({connection:"SAP_ON_PREMISE_ECC",
 connectionType:"ENTERPRISE_RESOURCE_PLANNING",ipAddress:"/H/90.10.150.238/S/3300",
 orgId:"buy2324950f126b",userName:"zumen",password:"Zumen@1234",systemNR:"00",clientNR:"900",language:"EN"})
+
 
 
 //Mapping configuration
