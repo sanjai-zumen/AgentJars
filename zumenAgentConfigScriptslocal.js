@@ -25,7 +25,7 @@ const connectiondetails =  db.user_connection_detail.find({orgId:"buy2324950f126
    db.url_meta_data.insert({orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/parts",httpOperation:"GET",responseMetaData:sappartsschema})
    db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/parts",httpOperation:"GET",outputField:"partNumber",inputField:"materialNumber"}])
    db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/parts",httpOperation:"GET",outputField:"partDescription",inputField:"materialDescription"}])
-   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/parts",httpOperation:"GET",outputField:"partReference",inputField:"oldMaterialNumber"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/parts",httpOperation:"GET",outputField:"erpPartRef",inputField:"oldMaterialNumber"}])
    db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/parts",httpOperation:"GET",outputField:"makeBuy",inputField:"procurementType"}])
    db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/parts",httpOperation:"GET",outputField:"uom",inputField:"unitOfMeasure"}])
    db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/parts",httpOperation:"GET",outputField:"makePrice",inputField:"materialPriceControl.makePrice"}])
@@ -51,8 +51,7 @@ const connectiondetails =  db.user_connection_detail.find({orgId:"buy2324950f126
 
 
    db.endpointsmappingstore.insert({orgId:"buy2324950f126b",connectionId:x,zumenEndPoint:"/pricingdetails",zumenAgentEndpoint:"sap/ecc/v1/material/inforecord",httpOperation:"POST"})
-   sappartsschema = JSON.stringify([{materialNumber:"string",procurementType:"string",partCost:"string",vendor:"string",oneTimePriceFlag:"string",quantity:"string",rfqNumber:"string"}])
-   db.url_meta_data.insert({orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",requestMetaData:sappartsschema})
+   sappartsschema = JSON.stringify({erpItemCode:"string",makeBuy:"string",unitRate:"float",erpSupplierCode:"string",oneTimePriceFlag:"string",poquantitylimit:"float",productioncapacityofparts:"number",rfqNumber:"string"})
 
    db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"materialNumber",inputField:"erpItemCode"}])
    db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"procurementType",inputField:"makeBuy"}])
