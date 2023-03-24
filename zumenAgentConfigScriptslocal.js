@@ -52,7 +52,7 @@ const connectiondetails =  db.user_connection_detail.find({orgId:"buy2324950f126
 
 
    db.endpointsmappingstore.insert({orgId:"buy2324950f126b",connectionId:x,zumenEndPoint:"/pricingdetails",zumenAgentEndpoint:"sap/ecc/v1/material/inforecord",httpOperation:"POST"})
-   sappartsschema = JSON.stringify([{materialNumber:"string",procurementType:"string",partCost:"float",vendor:"string",oneTimePriceFlag:"string",quantity:"float",rfqNumber:"string"}])
+   sappartsschema = JSON.stringify([{materialNumber:"string",procurementType:"string",partCost:"float",vendor:"string",oneTimePriceFlag:"string",validToDate:"string",quantity:"float",rfqNumber:"string"}])
    db.url_meta_data.insert({orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",requestMetaData:sappartsschema})
 
    db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"materialNumber",inputField:"erpItemCode"}])
@@ -61,6 +61,7 @@ const connectiondetails =  db.user_connection_detail.find({orgId:"buy2324950f126
    db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"vendor",inputField:"erpSupplierCode"}])
    db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"oneTimePriceFlag",inputField:"oneTimePriceFlag"}])
    db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"quantity",inputField:"poQuantityLimit"}])
+   db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"validToDate",inputField:"validToDate"}])
    db.mappingstore.insert([{orgId:"buy2324950f126b",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"rfqNumber",inputField:"rfqNumber"}])
 
 
