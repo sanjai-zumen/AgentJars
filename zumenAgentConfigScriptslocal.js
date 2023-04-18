@@ -56,7 +56,7 @@ connectionType:"ENTERPRISE_RESOURCE_PLANNING"}).forEach(function(conn){
 
 
    db.endpointsmappingstore.insert({orgId:"buy4adad087f601",connectionId:x,zumenEndPoint:"/pricingdetails",zumenAgentEndpoint:"sap/ecc/v1/material/inforecord",httpOperation:"POST"})
-   sappartsschema = JSON.stringify([{materialNumber:"string",procurementType:"string",partCost:"float",vendor:"string",oneTimePriceFlag:"string",quantity:"float",validToDate:"string",rfqNumber:"string"}])
+   sappartsschema = JSON.stringify([{materialNumber:"string",procurementType:"string",partCost:"float",vendor:"string",oneTimePriceFlag:"string",quantity:"float",plant:"string",validToDate:"string",rfqNumber:"string",purchaseGrp:"string",purchaseOrg:"string",incoTerms1:"string",incoTerms2:"string"}])
    db.url_meta_data.insert({orgId:"buy4adad087f601",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",requestMetaData:sappartsschema})
 
    db.mappingstore.insert([{orgId:"buy4adad087f601",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"materialNumber",inputField:"erpItemCode"}])
@@ -67,6 +67,12 @@ connectionType:"ENTERPRISE_RESOURCE_PLANNING"}).forEach(function(conn){
    db.mappingstore.insert([{orgId:"buy4adad087f601",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"quantity",inputField:"poQuantityLimit"}])
    db.mappingstore.insert([{orgId:"buy4adad087f601",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"validToDate",inputField:"validToDate"}])
    db.mappingstore.insert([{orgId:"buy4adad087f601",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"rfqNumber",inputField:"rfqNumber"}])
+   db.mappingstore.insert([{orgId:"buy4adad087f601",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"purchaseGrp",inputField:"purchaseGrp"}])
+   db.mappingstore.insert([{orgId:"buy4adad087f601",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"purchaseOrg",inputField:"purchaseOrg"}])
+   db.mappingstore.insert([{orgId:"buy4adad087f601",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"incoTerms1",inputField:"incoTerms1"}])
+   db.mappingstore.insert([{orgId:"buy4adad087f601",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"incoTerms2",inputField:"incoTerms2"}])
+   db.mappingstore.insert([{orgId:"buy4adad087f601",connectionId:x,zumenEndpoint:"/pricingdetails",httpOperation:"POST",outputField:"plant",inputField:"plant"}])
+
 
 
    db.endpointsmappingstore.insert({orgId:"buy4adad087f601",connectionId:x,zumenEndPoint:"/purchaseorder",zumenAgentEndpoint:"sap/ecc/v1/purchaseorder",parameters:["purchaseordernumber"],httpOperation:"GET"})
@@ -149,4 +155,8 @@ connectionType:"ENTERPRISE_RESOURCE_PLANNING"}).forEach(function(conn){
     db.mappingstore.insert([{orgId:"buy4adad087f601",connectionId:x,zumenEndpoint:"/supplier",httpOperation:"GET",parameters:["vendornumber","purchaseorg"],outputField:"supplierIncoTermsPart2",inputField:"incoTermsPart2"}])
 
 
+    
+
+
 })
+
